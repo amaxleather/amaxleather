@@ -1,0 +1,530 @@
+body {
+  background-color: #f2f2f2;
+}
+.content p {
+  line-height: 40px;
+}
+.content h1 {
+  font-weight: normal;
+}
+.content h2 {
+  font-weight: normal;
+}
+.content h3 {
+  font-weight: normal;
+}
+.content h4 {
+  font-size: 14px;
+  color: #78191a;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.content h5 {
+  font-size: 20px;
+  color: #78191a;
+  margin-bottom: 0;
+}
+.content h6 {
+  font-size: 16px;
+  color: #78191a;
+  margin-bottom: 0;
+}
+.main-container {
+  background-color: white;
+  height: 80vh;
+  max-height: 900px;
+  min-height: 500px;
+  border-radius: 5px;
+  width: 70%;
+  max-width: 1150px;
+  min-width: 950px;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-container.not-relative {
+  position: static;
+}
+
+.navbar.sub-page {
+  transform: translateX(-150%);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 20%;
+  transition: all 0.3s;
+  position: absolute;
+  margin: auto;
+  justify-content: center;
+  height: 100%;
+  transform: translateX(-150%);
+  z-index: 1;
+}
+
+.navbar .navitem {
+  margin: 15px 0 15px 50px;
+  transition: 0.2s;
+}
+.navbar .navitem:hover a {
+  color: #282525a2;
+}
+.navbar .navitem:hover a.selectedlink {
+  color: #78191a;
+}
+
+.navbar .logo-image {
+  width: 200px;
+  margin-bottom: 50px;
+}
+
+.sub-nav {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+  top: 50px;
+  height: 120px;
+  position: absolute;
+  background-color: white;
+  z-index: 3;
+  width: 85%;
+}
+
+a.tertiaryButton:hover {
+  opacity: 0.7;
+}
+a.tertiaryButton.selectedlink:hover {
+  opacity: 1;
+}
+
+.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.preloader {
+  position: absolute;
+  background-image: url(../images/preloader.gif);
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 40%;
+  margin-top: 30%;
+}
+.mobileBack {
+  background-image: url(../images/back-icon.png);
+  height: 20px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+  margin: 0;
+}
+
+.home {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home img {
+  height: 50%;
+  max-height: 350px;
+  width: 50%;
+  object-fit: cover;
+  object-position: center;
+  align-self: center;
+  margin-right: 8%;
+}
+
+.topbar {
+  display: flex;
+  width: 70%;
+  justify-content: flex-end;
+  max-width: 1150px;
+  min-width: 950px;
+  margin-bottom: 10px;
+}
+.topbar a {
+  margin-bottom: 5px;
+  margin-left: 20px;
+  height: 20px;
+  width: 20px;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.topbar a:hover {
+  opacity: 0.3;
+}
+
+.topbar a.twitter {
+  background-image: url(../images/twitter-logo.png);
+  background-size: 30px;
+  background-position: center;
+}
+
+.topbar a.fb {
+  background-image: url(../images/fb-logo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+
+.topbar a.pinterest {
+  background-image: url(../images/pinterest-logo.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.topbar a.insta {
+  background-image: url(../images/insta-logo.png);
+  background-size: cover;
+  background-position: center;
+}
+
+a.selectedlink {
+  color: #78191a;
+}
+.bottombar {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  max-width: 1150px;
+  min-width: 950px;
+  margin-top: 15px;
+}
+.bottombar .leftbot {
+  display: flex;
+  margin-top: 0;
+}
+.bottombar .leftbot p {
+  margin: 0;
+}
+.bottombar .leftbot #copyright {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  line-height: 1.3em;
+}
+.bottombar .right {
+  display: flex;
+}
+.bottombar .botButton {
+  margin: 0;
+  font-size: 14px;
+  transition: 0.2s;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0.7;
+}
+.bottombar .botButton:hover {
+  opacity: 0.5;
+}
+.bottombar .linespan {
+  opacity: 0.7;
+  margin: 0 5px;
+}
+
+/* contact and retailer stuff */
+
+#contactwindow .preloader {
+  margin-top: 15%;
+  margin-left: 40%;
+  position: static;
+}
+
+#contactwindow,
+#retailerswindow {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: 0.5s;
+  position: absolute;
+  z-index: 4;
+}
+#retailerswindow {
+  z-index: 5;
+}
+
+#contactwindow .container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+#contactwindow .container .left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  height: 100%;
+  margin-left: 5%;
+}
+#contactwindow .container .left .logo {
+  background-image: url(../images/logo-tm.png);
+  height: 10%;
+  width: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#contactwindow .container .left h2 {
+  margin: 40px 0 20px;
+  font-size: 20px;
+  color: #282525;
+}
+#contactwindow .container .left .rows {
+  display: flex;
+  justify-content: space-between;
+}
+#contactwindow .container .left .row {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+#contactwindow .container .left .formtitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#contactwindow .container .left input {
+  padding: 10px 5px;
+}
+#contactwindow .container .left .messagefield {
+  height: 80px;
+  padding: 10px 5px;
+  max-width: 98%;
+  min-width: 98%;
+  max-height: 120px;
+}
+#close-contact {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  margin-top: 5%;
+  cursor: pointer;
+  margin-left: 93%;
+  background-image: url(../images/close-icon.png);
+  background-size: cover;
+  background-position: center;
+  transition: 0.2s;
+}
+#close-contact:hover {
+  opacity: 0.7;
+}
+#contactwindow .container .divLine {
+  height: 80%;
+  width: 1px;
+  background-color: black;
+  opacity: 0.2;
+  margin: auto 60px;
+}
+
+#contactwindow .container .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5%;
+}
+#contactwindow .container .right p {
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 10px;
+}
+#contactwindow .container .right p.title {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+#contactwindow .container .button {
+  width: 100%;
+  padding: 18px 0;
+  background-color: #78191a;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 3px;
+  transition: 0.2s;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+}
+#contactwindow .container .button:hover {
+  opacity: 0.85;
+}
+
+#contactwindow.inactive {
+  margin-top: 100%;
+}
+#contactwindow .contactforms {
+  height: 350px;
+}
+#contactwindow .required {
+  color: red;
+}
+
+/* retailer window */
+
+#retailerswindow.inactive {
+  margin-top: 100%;
+}
+#retailerswindow .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-left: 0;
+  transition: 0.3s;
+}
+
+#retailerswindow .container #countries {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+}
+
+#retailerswindow .container #countries .country {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 5%;
+}
+#retailerswindow .container h2 {
+  letter-spacing: 3px;
+  margin: 0;
+  transition: 0.2s;
+}
+
+#retailerswindow .container #countries .country h2 {
+  cursor: pointer;
+}
+#retailerswindow .container #countries .country h2:hover {
+  opacity: 0.7;
+}
+#retailerswindow .container #state {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-left: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#retailerswindow .container .name {
+  display: flex;
+  margin: 100px auto 60px;
+  justify-content: center;
+}
+#retailerswindow .container #state .list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 65%;
+  flex-wrap: wrap;
+  margin: auto;
+}
+#retailerswindow .container #state .list .state {
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  width: 100%;
+}
+#retailerswindow .container #state .list .state .stateName {
+  cursor: pointer;
+  transition: 0.2s;
+}
+#retailerswindow .container #state .list .state .stateName:hover {
+  opacity: 0.7;
+}
+#retailerswindow .container #location {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-left: 200%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#retailerswindow .container #location .list {
+  width: 80%;
+  margin: auto;
+  list-style: none;
+}
+#retailerswindow .container #location .list li {
+  margin-bottom: 20px;
+}
+#retailerswindow .container #location .list li p {
+  letter-spacing: 1px;
+}
+#retailerswindow .container .back {
+  cursor: pointer;
+  background-image: url(../images/back-icon.png);
+  height: 20px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 2px;
+  margin-right: 20px;
+  transition: 0.2s;
+}
+#retailerswindow .container .back:hover {
+  opacity: 0.7;
+}
+#retailerswindow #close-retailer {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-left: 93%;
+  background-image: url(../images/close-icon.png);
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s;
+  top: 5%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999;
+  transition: 0.2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

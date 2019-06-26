@@ -1,0 +1,95 @@
+.about {
+  width: 50%;
+  position: absolute;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10%;
+  left: 40%;
+}
+.content {
+  margin-top: 30px;
+}
+.top {
+  margin-top: 50px;
+}
+.line {
+  background-color: #78191a;
+  height: 5px;
+  width: 30px;
+  margin-top: 10px;
+}
+.content p img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/*Slider Styling*/
+.slider {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.slider .sliderContent {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+.slider .sliderContent p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.slider .sliderContent p img {
+  min-width: 100%;
+  height: auto;
+}
+.slider .controls {
+  display: none;
+  position: absolute;
+  margin-left: 25%;
+}
+.slider .controls .arrow {
+  background-image: url("../images/arrow.png");
+  height: 15px;
+  width: 8px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.slider .controls .arrow:hover {
+  opacity: 1;
+}
+.slider .controls .arrow.left {
+  margin-right: 30px;
+}
+.slider .controls .arrow.right {
+  transform: rotate(180deg);
+  margin-left: 30px;
+}
+.slider .controls .sliderPos {
+  height: 8px;
+  width: 8px;
+  background-color: #000000;
+  border-radius: 50px;
+  margin: 3px 10px 0;
+  opacity: 0.5;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.slider .controls .sliderPos:hover {
+  opacity: 0.7;
+}
+.slider .controls .sliderPos.active {
+  opacity: 1;
+  background-color: #78191a;
+}
+.slider .controls .sliderPos.active:hover {
+  opacity: 1;
+  background-color: #78191a;
+}
