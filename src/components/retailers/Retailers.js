@@ -1,9 +1,7 @@
 import React from "react";
 import "../../css/main.css";
-import axios from "axios";
 import _ from "lodash";
 
-const apibase = "https://clients.alexander-kim.com/amax/wp-json/wp/v2";
 class Retailers extends React.Component {
   state = {
     page: 0,
@@ -12,11 +10,9 @@ class Retailers extends React.Component {
     data: []
   };
   componentDidMount() {
-    axios.get(`${apibase}/retailers`).then(data => {
-      this.setState({
-        data: data.data
-      });
-    });
+    this.setState({
+      data: this.props.data
+    })
   }
   nextpage = () => {
     this.setState({
@@ -29,7 +25,7 @@ class Retailers extends React.Component {
     });
   };
   renderCountries = retailers => {
-    const countryArray = retailers.map(elem => elem.acf.country);
+    const countryArray = retailers.map(elem => elem.country);
     const uniqCountries = _.uniq(countryArray);
     return uniqCountries.map(country => (
       <div key={country} className="country">
@@ -45,15 +41,8 @@ class Retailers extends React.Component {
   };
 
   renderStates = retailers => {
-    const country = retailers.filter(
-      data => data.acf.country === this.state.country
-    );
-    const stateArray = country.map(
-      elem =>
-        this.state.country === "United States"
-          ? elem.acf.store_state
-          : elem.acf.store_province
-    );
+    const country = retailers.filter(data => data.country === this.state.country);
+    const stateArray = country.map(elem => elem.state);
     const uniqStates = _.uniq(stateArray);
     return uniqStates.sort().map(state => (
       <div className="state" key={state}>
@@ -82,18 +71,13 @@ class Retailers extends React.Component {
   };
   renderLocations = data => {
     return data
-      .filter(
-        obj =>
-          this.state.country === "United States"
-            ? obj.acf.store_state === this.state.state
-            : obj.acf.store_province === this.state.state
-      )
+      .filter(obj =>obj.state === this.state.state)
       .map(obj => (
         <li key={obj.id}>
           <p>
-            <b>{obj.title.rendered}</b> - {obj.acf.store_address}
+            <b>{obj.title}</b> - {obj.address}
             {" | "}
-            {obj.acf.store_phone_number}
+            {obj.phone_number}
           </p>
         </li>
       ));

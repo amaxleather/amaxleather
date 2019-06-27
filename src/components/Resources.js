@@ -19,6 +19,23 @@ class Resources extends React.Component {
     }
   };
   render() {
+    const headers = this.props.data.map(obj =>
+      <NavLink
+        to={"/resources/" + obj.title.replace(" ", "-")}
+        activeClassName="selectedlink"
+        className="tertiaryButton"
+      >
+        {obj.title}
+      </NavLink>);
+    const routes = this.props.data.map(obj =>
+      <Route
+        path={"/resources/" + obj.title.replace(" ", "-")}
+        render={() => (
+          <Resource
+            data={obj.content}
+          />
+        )}
+      />);
     return (
       <div className="resources" id="resources" style={{ opacity: 0 }}>
         <div className="sub-nav">
@@ -30,34 +47,7 @@ class Resources extends React.Component {
           </div>
           <div className="line" />
           <div className="linkList">
-            <NavLink
-              to="/resources/leather-care"
-              activeClassName="selectedlink"
-              className="tertiaryButton"
-            >
-              leather care
-            </NavLink>
-            <NavLink
-              to="/resources/furniture-care"
-              activeClassName="selectedlink"
-              className="tertiaryButton"
-            >
-              furniture care
-            </NavLink>
-            <NavLink
-              to="/resources/cleaning"
-              activeClassName="selectedlink"
-              className="tertiaryButton"
-            >
-              cleaning
-            </NavLink>
-            <NavLink
-              to="/resources/assembly"
-              activeClassName="selectedlink"
-              className="tertiaryButton"
-            >
-              assembly
-            </NavLink>
+            {headers}
           </div>
         </div>
         {this.props.data && (
@@ -70,46 +60,7 @@ class Resources extends React.Component {
               onExit={node => this.onExit(node)}
             >
               <Switch location={this.props.history.location}>
-                <Route
-                  path="/resources/leather-care"
-                  render={() => (
-                    <Resource
-                      data={this.props.data.find(obj => {
-                        return obj.categories[0] === 7;
-                      })}
-                    />
-                  )}
-                />
-                <Route
-                  path="/resources/furniture-care"
-                  render={() => (
-                    <Resource
-                      data={this.props.data.find(obj => {
-                        return obj.categories[0] === 6;
-                      })}
-                    />
-                  )}
-                />
-                <Route
-                  path="/resources/cleaning"
-                  render={() => (
-                    <Resource
-                      data={this.props.data.find(obj => {
-                        return obj.categories[0] === 4;
-                      })}
-                    />
-                  )}
-                />
-                <Route
-                  path="/resources/assembly"
-                  render={() => (
-                    <Resource
-                      data={this.props.data.find(obj => {
-                        return obj.categories[0] === 3;
-                      })}
-                    />
-                  )}
-                />
+                {routes}
               </Switch>
             </CSSTransition>
           </TransitionGroup>

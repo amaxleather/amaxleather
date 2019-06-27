@@ -147,29 +147,25 @@ class Contact extends React.Component {
           <div className="divLine" />
           <div className="right">
             <p className="title">EMAIL</p>
-            <p>{this.props.data && this.props.data.acf.primary_email}</p>
-            <p>{this.props.data && this.props.data.acf.secondary_email}</p>
+            <p>{this.props.data.primary_email}</p>
+            <p>{this.props.data.secondary_email}</p>
             <p className="title">FAX</p>
             <p>
-              {this.props.data &&
-                this.renderNum(this.props.data.acf.fax_number)}
+              {this.renderNum(this.props.data.fax_number)}
             </p>
             <p className="title">PHONE</p>
             <p>
-              {this.props.data &&
-                `${this.renderNum(this.props.data.acf.us_phone_number)} (US)`}
+              {`${this.renderNum(this.props.data.us_phone_number)} (US)`}
             </p>
             <p>
-              {this.props.data &&
-                `${this.renderNum(
-                  this.props.data.acf.canada_phone_number
+              {`${this.renderNum(
+                  this.props.data.canada_phone_number
                 )} (Canada)`}
             </p>
             <p className="title">ADDRESSES</p>
-            <p>{this.props.data && `${this.props.data.acf.us_address} (US)`}</p>
+            <p>{`${this.props.data.us_address} (US)`}</p>
             <p>
-              {this.props.data &&
-                `${this.props.data.acf.canada_address} (Canada)`}
+              {`${this.props.data.canada_address} (Canada)`}
             </p>
           </div>
           <div id="close-contact" onClick={this.props.contact} />

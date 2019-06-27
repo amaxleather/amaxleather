@@ -23,8 +23,8 @@ class Navbar extends React.Component {
           </NavLink>
         </div>
         <div className="navitem">
-          <NavLink to="/craftmanship" activeClassName="selectedlink">
-            craftmanship
+          <NavLink to="/craftsmanship" activeClassName="selectedlink">
+            craftsmanship
           </NavLink>
         </div>
         <div className="navitem">

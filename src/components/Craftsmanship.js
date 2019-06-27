@@ -1,29 +1,25 @@
 import React from "react";
-import "../css/craftmanship.css";
+import "../css/craftsmanship.css";
 import renderHTML from "react-render-html";
 import { NavLink } from "react-router-dom";
 
-class Craftmanship extends React.Component {
+class Craftsmanship extends React.Component {
   render() {
     return (
-      <div className="craftmanship" id="craftmanship">
+      <div className="craftsmanship" id="craftsmanship">
         <div className="headers top">
           <NavLink className="mobileBack" to="">
             {""}
           </NavLink>{" "}
-          Craftmanship
+          Craftsmanship
         </div>
         <div className="line" />
         <div className="content">
-          {this.props.data ? (
-            renderHTML(this.props.data.content.rendered)
-          ) : (
-            <div />
-          )}
+          {renderHTML(this.props.data.content)}
         </div>
       </div>
     );
   }
 }
 
-export default Craftmanship;
+export default Craftsmanship;

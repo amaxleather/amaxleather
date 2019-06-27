@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
 import * as utils from "../utils/animations";
 
-const apibase = "https://clients.alexander-kim.com/amax/wp-json/wp/v2";
 class CollectionList extends React.Component {
   state = {
     data: [],
@@ -12,6 +10,7 @@ class CollectionList extends React.Component {
   collectionRef = React.createRef();
 
   componentWillMount() {
+    /*
     axios
       .get(
         `${apibase}/collection?furnituretype=${this.props.dataId}&per_page=100`
@@ -23,7 +22,7 @@ class CollectionList extends React.Component {
             loading: false
           });
         }, 200);
-      });
+      });*/
   }
 
   componentDidUpdate(prevProps, prevState) {

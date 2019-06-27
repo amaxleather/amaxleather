@@ -7,7 +7,7 @@ class Resource extends React.Component {
     return (
       <div className="resource-item">
         <div className="content">
-          {this.props.data && renderHTML(this.props.data.content.rendered)}
+          {renderHTML(this.props.data)}
         </div>
       </div>
     )

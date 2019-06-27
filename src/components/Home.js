@@ -1,4 +1,5 @@
 import React from "react";
+import image from '../images/home-image.png';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -10,9 +11,7 @@ class Home extends React.Component {
       <div className="home" id="home">
         <img
           alt="home-img"
-          src={
-            this.props.data && this.props.data.acf.home_page_image.sizes.large
-          }
+          src={image}
         />
       </div>
     );
