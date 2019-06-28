@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Collection from "./components/Collection";
-import Resources from "./components/Resources";
-import Craftsmanship from "./components/Craftsmanship";
 import Home from "./components/Home";
 import Topbar from "./components/Topbar";
 import Contact from "./components/Contact";
 import "./css/main.css";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import * as utils from "./utils/animations";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import * as utils from "./components/animations";
 import Bottombar from "./components/Bottombar";
 import Retailers from "./components/retailers/Retailers";
 import Lightbox from "./components/LightBox";
-import Screen from "./components/Screen";
+import uuid from "uuidv4";
+import ContentScreen from "./components/ContentScreen";
+import HeadersScreen from "./components/HeadersScreen";
+import CollectionScreen from "./components/CollectionScreen";
 
 class App extends Component {
   state = {
@@ -28,10 +27,9 @@ class App extends Component {
   };
   componentWillMount = () => {
     const data = require("./data.json");
-    console.log(data);
     this.setState({
       data: data,
-      isIE: this.checkBroser()
+      isIE: this.checkBrowser()
     });
   };
   openContact = () => {
@@ -59,14 +57,10 @@ class App extends Component {
     }
   };
   checkOnHome = () => {
-    if (this.props.location.pathname === "/") {
-      return true;
-    }
-    return false;
+    return this.props.location.pathname === "/";
   };
-  checkBroser = () => {
-    var isIntEx = /*@cc_on!@*/ false || !!document.documentMode;
-    return isIntEx;
+  checkBrowser = () => {
+    return /*@cc_on!@ || */ !!document.documentMode;
   };
   toggleLightBox = () => {
     this.setState({ lightBoxClicked: !this.state.lightBoxClicked });
@@ -83,7 +77,6 @@ class App extends Component {
       });
     }
   };
-
   changeLightBox = imagesrc => {
     this.toggleLightBox();
     this.setState({ lightbox: true, lightboximg: imagesrc });
@@ -92,20 +85,34 @@ class App extends Component {
   render() {
     const routes = Object.keys(this.state.data.headers).map(key =>
       <Route
-      path={"/" + key}
-      render={() => (
-        <Screen
-          data={this.state.data.headers[key]}
-        />
-      )}
-    />);
+        key={uuid()}
+        path={"/" + key}
+        render={(props) => {
+          const data = this.state.data.headers[key];
+          if (data.type === 0) {
+            return (<ContentScreen
+              data={data}
+            />);
+          } else if (data.type === 1) {
+            return (<HeadersScreen
+              data={data}
+            />);
+          } else {
+            return (<CollectionScreen
+              data={data}
+              {...props}
+              changeLightBox={this.changeLightBox}
+            />);
+          }
+        }}
+      />);
     return (
       <div className="App">
         {this.state.isIE ? (
           <React.Fragment>
             <div>
               <img
-                src={require("../src/images/logo-tm.png")}
+                src={require("./images/logo-tm.png")}
                 className="logo-image"
                 alt="logo"
                 width="200px"
@@ -138,7 +145,7 @@ class App extends Component {
                   onClick={this.showLightbox}
                 />
               )}
-              <Navbar onHome={this.checkOnHome()} />
+              <Navbar data={this.state.data.headers} onHome={this.checkOnHome()} />
               <TransitionGroup appear={true}>
                 <CSSTransition
                   key={this.props.location.key}

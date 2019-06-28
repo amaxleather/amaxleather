@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/resources.css'
 import renderHTML from 'react-render-html'
 
-class Resource extends React.Component {
+class SubScreen extends React.Component {
   render() {
     return (
       <div className="resource-item">
@@ -14,4 +14,4 @@ class Resource extends React.Component {
   }
 }
 
-export default Resource
+export default SubScreen;

@@ -1,5 +1,4 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
 import "../css/main.css";
 
 class Bottombar extends React.Component {
@@ -7,9 +6,6 @@ class Bottombar extends React.Component {
     return (
       <div className="bottombar">
         <div className="leftbot">
-          {/* <div className="botButton" onClick={this.props.contact}>
-            <p>contact </p>
-          </div> */}
           <a
             className="botButton"
             href="http://amaxleather.com/dealers"
@@ -22,14 +18,6 @@ class Bottombar extends React.Component {
           <p id="copyright"> Copyright © AMAX Leather Inc.</p>
         </div>
         <div className="right">
-          {/* <a
-            className="botButton"
-            href="http://amaxleather.com/dealers"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            login
-          </a> */}
           <div className="botButton" onClick={this.props.contact}>
             contact
           </div>

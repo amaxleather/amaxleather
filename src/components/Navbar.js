@@ -1,8 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import uuid from "uuidv4";
 
 class Navbar extends React.Component {
   render() {
+    const links = Object.keys(this.props.data).map(key => {
+        return <div key={uuid()} className="navitem">
+          <NavLink
+            to={"/" + key + ("headers" in this.props.data[key] ? "/" + Object.keys(this.props.data[key].headers)[0] : "")}
+            activeClassName="selectedlink">
+            {key}
+          </NavLink>
+        </div>
+      }
+    );
     return (
       <div className={this.props.onHome ? "navbar" : "navbar sub-page"}>
         <NavLink to="">
@@ -12,26 +23,7 @@ class Navbar extends React.Component {
             alt="logo"
           />
         </NavLink>
-        <div className="navitem">
-          <NavLink to="/about" activeClassName="selectedlink">
-            about
-          </NavLink>
-        </div>
-        <div className="navitem">
-          <NavLink to="/collection/sofas" activeClassName="selectedlink">
-            collection
-          </NavLink>
-        </div>
-        <div className="navitem">
-          <NavLink to="/craftsmanship" activeClassName="selectedlink">
-            craftsmanship
-          </NavLink>
-        </div>
-        <div className="navitem">
-          <NavLink to="/resources/leather-care" activeClassName="selectedlink">
-            resources
-          </NavLink>
-        </div>
+        {links}
       </div>
     );
   }

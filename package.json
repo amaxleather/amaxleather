@@ -12,7 +12,8 @@
     "react-render-html": "^0.6.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "react-transition-group": "^2.4.0"
+    "react-transition-group": "^2.4.0",
+    "uuidv4": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

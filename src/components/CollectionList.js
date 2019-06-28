@@ -1,60 +1,32 @@
 import React from "react";
-import * as utils from "../utils/animations";
+import uuid from "uuidv4";
 
 class CollectionList extends React.Component {
-  state = {
-    data: [],
-    loading: true
-  };
-
-  collectionRef = React.createRef();
-
-  componentWillMount() {
-    /*
-    axios
-      .get(
-        `${apibase}/collection?furnituretype=${this.props.dataId}&per_page=100`
-      )
-      .then(data => {
-        setTimeout(() => {
-          this.setState({
-            data: data.data,
-            loading: false
-          });
-        }, 200);
-      });*/
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.loading !== prevState.loading && !this.state.loading) {
-      utils.collectionSubIntro(this.collectionRef.current.children);
-    }
-  }
 
   render() {
     return (
-      <div ref={this.collectionRef} className="collectionList">
-        {!this.state.loading ? (
-          this.state.data.map(item => (
-            <div className="node" key={item.id} style={{ opacity: 0 }}>
+      <div className="collectionList">
+        {
+          this.props.data.map(item => (
+            <div className="node" key={uuid()}>
               <p />
               <div
                 className="collectionNode"
                 onClick={() => {
-                  this.props.changeLightBox(item.acf.image.sizes.large);
+                  this.props.changeLightBox(require("../" + item.image));
                 }}
               >
                 <div className="collectionName">
-                  <p>{item.title.rendered}</p>
-                  <p className="dimensions">{item.acf.dimensions}</p>
+                  <p>{item.title}</p>
+                  <p className="dimensions">{item.dimensions}</p>
                 </div>
                 <div className="image">
                   <div className="imageContainer">
                     <img
-                      src={item.acf.image.sizes.large}
-                      alt={item.title.rendered}
+                      src={require("../" + item.image)}
+                      alt={item.title}
                       className={
-                        item.acf.type_of_item === "Recliner" ? "recliner" : ""
+                        item.type === "recliner" ? "recliner" : ""
                       }
                     />
                   </div>
@@ -62,9 +34,7 @@ class CollectionList extends React.Component {
               </div>
             </div>
           ))
-        ) : (
-          <div className="preloader" />
-        )}
+        }
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+//import axios from "axios";
 import renderHTML from "react-render-html";
 
 const apibase = "https://clients.alexander-kim.com/amax/wp-json/wp/v2";
@@ -11,12 +11,12 @@ class Slider extends React.Component {
   };
 
   componentWillMount() {
-    axios.get(`${apibase}/sliders`).then(data => {
+   /*axios.get(`${apibase}/sliders`).then(data => {
       this.setState({
         data: data.data,
         loading: false
       });
-    });
+    });*/
   }
   componentDidMount() {
     this.sliderCycle();

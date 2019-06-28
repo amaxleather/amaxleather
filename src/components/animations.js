@@ -18,7 +18,7 @@ export const outroPageAnimation = (node) => {
   );
 };
 
-export const collectionSubIntro = node => {
+export const subIntro = node => {
   TweenMax.fromTo(
     node,
     0.4,
@@ -27,25 +27,7 @@ export const collectionSubIntro = node => {
   );
 };
 
-export const collectionSubOutro = node => {
-  TweenMax.fromTo(
-    node,
-    0.4,
-    { opacity: 1 },
-    { opacity: 0, ease: Power3.easeOut }
-  );
-};
-
-export const resourcesSubIntro = node => {
-  TweenMax.fromTo(
-    node,
-    0.4,
-    { opacity: 0 },
-    { opacity: 1, ease: Power3.easeOut, delay: 0.6 }
-  );
-};
-
-export const resourcesSubOutro = node => {
+export const subOutro = node => {
   TweenMax.fromTo(
     node,
     0.4,
