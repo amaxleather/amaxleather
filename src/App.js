@@ -11,9 +11,9 @@ import Bottombar from "./components/Bottombar";
 import Retailers from "./components/retailers/Retailers";
 import Lightbox from "./components/LightBox";
 import uuid from "uuidv4";
-import ContentScreen from "./components/ContentScreen";
-import HeadersScreen from "./components/HeadersScreen";
-import CollectionScreen from "./components/CollectionScreen";
+import ContentScreen from "./screens/ContentScreen";
+import HeadersScreen from "./screens/HeadersScreen";
+import CollectionScreen from "./screens/CollectionScreen";
 
 class App extends Component {
   state = {
@@ -26,11 +26,12 @@ class App extends Component {
     lightboximg: null
   };
   componentWillMount = () => {
-    const data = require("./data.json");
+    const data = require("./data/data.json");
     this.setState({
       data: data,
       isIE: this.checkBrowser()
     });
+    this.previousPath = "/";
   };
   openContact = () => {
     if (this.state.contactOpen === false) {
@@ -151,11 +152,16 @@ class App extends Component {
                   key={this.props.location.key}
                   timeout={500}
                   classNames="fade"
-                  onEnter={node =>
-                    utils.introPageAnimation(node, this.props.location.pathname)
+                  onEnter={node => {
+                    console.log('onenter');
+                    utils.introPageAnimation(node, this.props.location.pathname);
+                    this.previousPath = "/";
                   }
-                  onExit={node =>
-                    utils.outroPageAnimation(node, this.props.location.pathname)
+                  }
+                  onExit={node => {
+                    console.log('onexit');
+                    utils.outroPageAnimation(node, this.props.location.pathname);
+                  }
                   }
                 >
                   <Switch location={this.props.location}>

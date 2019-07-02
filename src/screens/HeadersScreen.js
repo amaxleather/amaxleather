@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/about.css";
 import { NavLink, Route, Switch, withRouter } from "react-router-dom";
-import SubScreen from "./SubScreen";
+import SubScreen from "../components/SubScreen";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import * as animations from "./animations";
+import * as animations from "../components/animations";
 import uuid from "uuidv4";
 
 const fixTitle = str => str.toLowerCase().replace(" ", "-");
@@ -42,7 +42,7 @@ class HeadersScreen extends React.Component {
         )}
       />);
     return (
-      <div className="resources" id="resources" style={{ opacity: 0 }}>
+      <div className="resources" id="resources">
         <div className="sub-nav">
           <div className="headers">
             <NavLink className="mobileBack" to="">

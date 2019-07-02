@@ -4,11 +4,11 @@
   height: 100%;
   padding-right: 10%;
   left: 40%;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  /*-webkit-overflow-scrolling: touch;*/
 }
 
 #collection .collectionList {

@@ -1,9 +1,9 @@
 import React from "react";
-import * as animations from "./animations";
+import * as animations from "../components/animations";
 import { Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { NavLink } from "react-router-dom";
-import CollectionList from "./CollectionList";
+import CollectionList from "../components/CollectionList";
 import "../css/collection.css";
 import "../css/main.css";
 import uuid from "uuidv4";
@@ -45,7 +45,7 @@ class CollectionScreen extends React.Component {
       />);
     return (
       <React.Fragment>
-        <div className="collection" id="collection" style={{ opacity: 0 }}>
+        <div className="collection" id="collection">
           <div className="nav-cont">
             <div className="sub-nav">
               <div className="headers title">

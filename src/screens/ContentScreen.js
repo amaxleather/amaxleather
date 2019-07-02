@@ -7,7 +7,7 @@ import Slider from "../components/Slider";
 class ContentScreen extends React.Component {
   render() {
     return (
-      <div className="about" id="about">
+      <div className="about">
         <div className="headers top">
           <NavLink className="mobileBack" to="">
             {""}
@@ -16,7 +16,8 @@ class ContentScreen extends React.Component {
         </div>
         <div className="line" />
         <div className="content">
-          <Slider />
+          {"slider" in this.props.data && <Slider data={this.props.data.slider}/>}
+          {"slider" in this.props.data && <br />}
           {renderHTML(this.props.data.content)}
         </div>
       </div>

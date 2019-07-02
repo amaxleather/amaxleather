@@ -1,56 +1,49 @@
 import React from "react";
-//import axios from "axios";
-import renderHTML from "react-render-html";
+import uuid from "uuidv4";
 
-const apibase = "https://clients.alexander-kim.com/amax/wp-json/wp/v2";
 class Slider extends React.Component {
   state = {
-    data: [],
-    loading: true,
     sliderPos: 0
   };
 
-  componentWillMount() {
-   /*axios.get(`${apibase}/sliders`).then(data => {
-      this.setState({
-        data: data.data,
-        loading: false
-      });
-    });*/
-  }
   componentDidMount() {
-    this.sliderCycle();
+    this.interval = setInterval(this.sliderCycle, 3000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  renderImages = () => {
+    return this.props.data.map((image) => (
+      <img
+        key={uuid()}
+        className="alignnone size-full"
+        alt={image}
+        src={require("../" + image)}
+        width={1600}
+        height={802}
+      />
+    ));
+  };
+
   renderSlider = () => {
-    let imageArray = [];
-    for (
-      let i = 0;
-      i < this.state.data[0].content.rendered.split(",img").length - 1;
-      i++
-    ) {
-      imageArray.push(this.state.data[0].content.rendered.split(",img")[i]);
-    }
-    return imageArray.map(image => (
+    return this.props.data.map((image, index) => (
       <div
         className={
-          this.state.sliderPos === imageArray.indexOf(image)
+          this.state.sliderPos === index
             ? "active sliderPos"
             : "sliderPos"
         }
-        id={imageArray.indexOf(image)}
-        key={`image${imageArray.indexOf(image)}`}
+        style={{marginLeft: `${90 / (this.props.data.length + 1)}%`}}
+        key={uuid()}
         onClick={() => {
-          this.setState({ sliderPos: imageArray.indexOf(image) });
+          this.setState({ sliderPos: index });
+          clearInterval(this.interval);
+          this.interval = setInterval(this.sliderCycle, 3000);
         }}
       />
     ));
-    // return sliderImages
-    //   .map(() => <div className="sliderPos" id={placement + 1} />)
-    //   .slice(
-    //     0,
-    //     sliderImages.map(() => <div className="sliderPos" />).length - 1
-    //   );
   };
 
   sliderPosition = () => {
@@ -59,43 +52,37 @@ class Slider extends React.Component {
     };
     return style;
   };
+
   sliderCycle = () => {
-    setTimeout(() => {
-      this.state.sliderPos === 2
-        ? this.setState({ sliderPos: 0 })
-        : this.setState({ sliderPos: this.state.sliderPos + 1 });
-      this.sliderCycle();
-    }, 3000);
+    this.setState({ sliderPos: (this.state.sliderPos + 1) % this.props.data.length });
   };
 
   render() {
     return (
-      <div className="slider" id="slider">
-        <div className="sliderContent" style={this.sliderPosition()}>
-          {this.state.loading ? (
-            <div />
-          ) : (
-            renderHTML(
-              this.state.data[0].content.rendered.split(",img").join("")
-            )
-          )}
+      <div className="sliderContainer">
+        <div className="slider" id="slider">
+          <div className="sliderContent" style={this.sliderPosition()}>
+            <p>
+              {this.renderImages()}
+            </p>
+          </div>
         </div>
         <div className="controls">
           <div
             className="left arrow"
             onClick={() => {
-              this.state.sliderPos === 0
-                ? this.setState({ sliderPos: 2 })
-                : this.setState({ sliderPos: this.state.sliderPos - 1 });
+              this.setState({ sliderPos: (this.state.sliderPos - 1 + this.props.data.length) % this.props.data.length });
+              clearInterval(this.interval);
+              this.interval = setInterval(this.sliderCycle, 3000);
             }}
           />
-          {this.state.loading ? <div /> : this.renderSlider()}
+          {this.renderSlider()}
           <div
             className="right arrow"
             onClick={() => {
-              this.state.sliderPos === 2
-                ? this.setState({ sliderPos: 0 })
-                : this.setState({ sliderPos: this.state.sliderPos + 1 });
+              this.setState({ sliderPos: (this.state.sliderPos + 1) % this.props.data.length });
+              clearInterval(this.interval);
+              this.interval = setInterval(this.sliderCycle, 3000);
             }}
           />
         </div>

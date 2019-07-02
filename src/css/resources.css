@@ -2,9 +2,9 @@
   width: 50%;
   position: absolute;
   height: 100%;
-  overflow-y: scroll;
   padding-right: 10%;
   left: 40%;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
