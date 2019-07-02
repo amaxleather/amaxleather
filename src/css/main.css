@@ -92,10 +92,11 @@ body {
   transition: all 0.3s;
   top: 50px;
   height: 120px;
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
   background-color: white;
   z-index: 3;
-  width: 85%;
+  width: 100%;
 }
 
 a.tertiaryButton:hover {

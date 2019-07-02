@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/about.css";
+import "../css/contentscreen.css";
 import { NavLink, Route, Switch, withRouter } from "react-router-dom";
 import SubScreen from "../components/SubScreen";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -44,21 +44,23 @@ class HeadersScreen extends React.Component {
     return (
       <div className="resources" id="resources">
         <div className="sub-nav">
-          <div className="headers">
-            <NavLink className="mobileBack" to="">
-              {""}
-            </NavLink>{" "}
-            {this.props.data.title}
-          </div>
-          <div className="line" />
-          <div className="linkList">
-            {headers}
+          <div className="headersContainer">
+            <div className="headers">
+              <NavLink className="mobileBack" to="">
+                {""}
+              </NavLink>{" "}
+              {this.props.data.title}
+            </div>
+            <div className="line" />
+            <div className="linkList">
+              {headers}
+            </div>
           </div>
         </div>
         <TransitionGroup className="resource" id="resource">
           <CSSTransition
             key={this.props.history.location.key}
-            timeout={5000}
+            timeout={300}
             classNames="fade"
             onEnter={node => this.onEnter(node)}
             onExit={node => this.onExit(node)}

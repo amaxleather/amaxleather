@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Home from "./screens/Home";
 import Topbar from "./components/Topbar";
-import Contact from "./components/Contact";
+import Contact from "./screens/Contact";
 import "./css/main.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import * as utils from "./components/animations";
 import Bottombar from "./components/Bottombar";
-import Retailers from "./components/retailers/Retailers";
+import Retailers from "./screens/Retailers";
 import Lightbox from "./components/LightBox";
 import uuid from "uuidv4";
 import ContentScreen from "./screens/ContentScreen";
@@ -31,7 +31,7 @@ class App extends Component {
       data: data,
       isIE: this.checkBrowser()
     });
-    this.previousPath = "/";
+    this.previousPath = this.props.location.pathname;
   };
   openContact = () => {
     if (this.state.contactOpen === false) {
@@ -153,14 +153,12 @@ class App extends Component {
                   timeout={500}
                   classNames="fade"
                   onEnter={node => {
-                    console.log('onenter');
-                    utils.introPageAnimation(node, this.props.location.pathname);
-                    this.previousPath = "/";
+                    utils.introPageAnimation(node, this.previousPath, this.props.location.pathname);
                   }
                   }
                   onExit={node => {
-                    console.log('onexit');
-                    utils.outroPageAnimation(node, this.props.location.pathname);
+                    utils.outroPageAnimation(node, this.previousPath, this.props.location.pathname);
+                    this.previousPath = this.props.location.pathname;
                   }
                   }
                 >

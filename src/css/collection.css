@@ -8,14 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /*-webkit-overflow-scrolling: touch;*/
 }
 
 #collection .collectionList {
   position: absolute;
   left: 0;
   top: 170px;
-  width: 85%;
+  width: 83%;
 }
 
 .collectionList {

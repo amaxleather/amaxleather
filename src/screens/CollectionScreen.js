@@ -46,15 +46,15 @@ class CollectionScreen extends React.Component {
     return (
       <React.Fragment>
         <div className="collection" id="collection">
-          <div className="nav-cont">
-            <div className="sub-nav">
-              <div className="headers title">
+          <div className="sub-nav">
+            <div className="headersContainer">
+              <div className="headers">
                 <NavLink className="mobileBack" to="">
                   {""}
                 </NavLink>
                 {this.props.data.title}
+                <div className="line" />
               </div>
-              <div className="line" />
               <div className="linkList">
                 {links}
               </div>
@@ -63,7 +63,7 @@ class CollectionScreen extends React.Component {
           <TransitionGroup>
             <CSSTransition
               key={this.props.history.location.key}
-              timeout={500}
+              timeout={300}
               classNames="fade"
               onEnter={node => this.onEnter(node)}
               onExit={node => this.onExit(node)}
