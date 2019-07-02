@@ -6,15 +6,6 @@ class Bottombar extends React.Component {
     return (
       <div className="bottombar">
         <div className="leftbot">
-          <a
-            className="botButton"
-            href="http://amaxleather.com/dealers"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            login
-          </a>
-          <span className="linespan">|</span>
           <p id="copyright"> Copyright © AMAX Leather Inc.</p>
         </div>
         <div className="right">
