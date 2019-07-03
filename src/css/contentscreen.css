@@ -51,6 +51,7 @@
 }
 .controls {
   width: 100%;
+  display: none;
 }
 .controls .arrow {
   background-image: url("../images/arrow.png");

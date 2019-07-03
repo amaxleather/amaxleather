@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/contentscreen.css";
 import { NavLink, Route, Switch, withRouter } from "react-router-dom";
 import SubScreen from "../components/SubScreen";
 import { CSSTransition, TransitionGroup } from "react-transition-group";

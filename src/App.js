@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Home from "./screens/Home";
 import Topbar from "./components/Topbar";
 import Contact from "./screens/Contact";
-import "./css/main.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import * as utils from "./components/animations";
 import Bottombar from "./components/Bottombar";
@@ -14,6 +13,11 @@ import uuid from "uuidv4";
 import ContentScreen from "./screens/ContentScreen";
 import HeadersScreen from "./screens/HeadersScreen";
 import CollectionScreen from "./screens/CollectionScreen";
+import "./css/main.css";
+import "./css/collection.css";
+import "./css/content.css";
+import "./css/contentscreen.css";
+import "./css/mobile.css";
 
 class App extends Component {
   state = {

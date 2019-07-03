@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/main.css";
 import * as emailjs from "emailjs-com";
 
 class Contact extends React.Component {

@@ -1,7 +1,4 @@
 import React from "react";
-//import { NavLink } from "react-router-dom";
-import "../css/main.css";
-import "../css/mobile.css";
 
 class Topbar extends React.Component {
   render() {

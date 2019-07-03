@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/main.css";
 import _ from "lodash";
 
 class Retailers extends React.Component {

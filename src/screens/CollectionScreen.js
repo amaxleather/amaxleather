@@ -4,8 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { NavLink } from "react-router-dom";
 import CollectionList from "../components/CollectionList";
-import "../css/collection.css";
-import "../css/main.css";
 import uuid from "uuidv4";
 
 const fixTitle = str => str.toLowerCase().replace(" ", "-");

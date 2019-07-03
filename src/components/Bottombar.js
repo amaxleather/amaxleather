@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/main.css";
 
 class Bottombar extends React.Component {
   render() {

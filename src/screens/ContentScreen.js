@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/contentscreen.css";
 import renderHTML from "react-render-html";
 import { NavLink } from "react-router-dom";
 import Slider from "../components/Slider";
@@ -18,6 +17,7 @@ class ContentScreen extends React.Component {
           <div className="line" />
         </div>
         <div className="content">
+          {"slider" in this.props.data && <br />}
           {"slider" in this.props.data && <Slider data={this.props.data.slider} />}
           {"slider" in this.props.data && <br />}
           {renderHTML(this.props.data.content)}
