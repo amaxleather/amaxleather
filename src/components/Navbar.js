@@ -1,14 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import uuid from "uuidv4";
 
 class Navbar extends React.Component {
+  handleClick(e, to) {
+    if (this.props.location.pathname === to) {
+      e.preventDefault();
+    }
+  }
+
   render() {
     const links = Object.keys(this.props.data).map(key => {
+        const to = "/" + key + ("headers" in this.props.data[key] ? "/" + Object.keys(this.props.data[key].headers)[0] : "");
         return <div key={uuid()} className="navitem">
           <NavLink
-            to={"/" + key + ("headers" in this.props.data[key] ? "/" + Object.keys(this.props.data[key].headers)[0] : "")}
-            activeClassName="selectedlink">
+            to={to}
+            activeClassName="selectedlink"
+            onClick={(e) => this.handleClick(e, to)}
+          >
             {key}
           </NavLink>
         </div>
@@ -29,4 +38,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

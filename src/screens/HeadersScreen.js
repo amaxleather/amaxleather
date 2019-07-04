@@ -20,16 +20,25 @@ class HeadersScreen extends React.Component {
     }
   };
 
+  handleClick(e, to) {
+    if (this.props.location.pathname === to) {
+      e.preventDefault();
+    }
+  }
+
   render() {
-    const headers = Object.keys(this.props.data.headers).map(key =>
-      <NavLink
+    const headers = Object.keys(this.props.data.headers).map(key => {
+      const to = "/" + fixTitle(this.props.data.title + "/" + this.props.data.headers[key].title);
+      return <NavLink
         key={uuid()}
-        to={"/" + fixTitle(this.props.data.title + "/" + this.props.data.headers[key].title)}
+        to={to}
         activeClassName="selectedlink"
         className="tertiaryButton"
+        onClick={(e) => this.handleClick(e, to)}
       >
         {this.props.data.headers[key].title}
-      </NavLink>);
+      </NavLink>
+    });
     const routes = Object.keys(this.props.data.headers).map(key =>
       <Route
         key={uuid()}
@@ -43,7 +52,7 @@ class HeadersScreen extends React.Component {
     return (
       <div className="resources" id="resources">
         <div className="sub-nav">
-          <div className="headersContainer">
+          <div className="headersContainer2">
             <div className="headers">
               <NavLink className="mobileBack" to="">
                 {""}

@@ -36,6 +36,22 @@ class Topbar extends React.Component {
         >
           <div />
         </a>
+        <a
+          className="youtube"
+          href="https://www.youtube.com/channel/UCjTnFFlPuI2TRaSrq-Fm39w/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div />
+        </a>
+        <a
+          className="linkedin"
+          href="https://www.instagram.com/amaxleather/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div />
+        </a>
       </div>
     );
   }

@@ -19,7 +19,6 @@ class ContentScreen extends React.Component {
         <div className="content">
           {"slider" in this.props.data && <br />}
           {"slider" in this.props.data && <Slider data={this.props.data.slider} />}
-          {"slider" in this.props.data && <br />}
           {renderHTML(this.props.data.content)}
         </div>
       </div>

@@ -45,7 +45,7 @@ class CollectionScreen extends React.Component {
       <React.Fragment>
         <div className="collection" id="collection">
           <div className="sub-nav">
-            <div className="headersContainer">
+            <div className="headersContainer2">
               <div className="headers">
                 <NavLink className="mobileBack" to="">
                   {""}

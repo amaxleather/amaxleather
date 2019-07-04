@@ -25,9 +25,6 @@ class CollectionList extends React.Component {
                     <img
                       src={require("../" + item.image)}
                       alt={item.title}
-                      className={
-                        item.type === "recliner" ? "recliner" : ""
-                      }
                     />
                   </div>
                 </div>
