@@ -38,7 +38,7 @@ class Topbar extends React.Component {
         </a>
         <a
           className="youtube"
-          href="https://www.youtube.com/channel/UCjTnFFlPuI2TRaSrq-Fm39w/"
+          href="https://www.youtube.com/channel/UCf8J1MC7cYx4xbP_lcaBkTA/"
           target="_blank"
           rel="noopener noreferrer"
         >
