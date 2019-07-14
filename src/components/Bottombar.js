@@ -5,7 +5,7 @@ class Bottombar extends React.Component {
     return (
       <div className="bottombar">
         <div className="leftbot">
-          <p id="copyright"> Copyright 2019 © AMAX Leather Inc.</p>
+          <p id="copyright"> Copyright © AMAX Leather Inc.</p>
         </div>
         <div className="right">
           <div className="botButton" onClick={this.props.contact}>
