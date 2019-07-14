@@ -4,7 +4,6 @@ import craftsmanship from "./craftsmanship.js";
 import furniturecare from "./furniturecare.js";
 import leathercare from "./leathercare.js";
 import madetoorder from "./madetoorder.js";
-import retailer from "./retailer.js";
 import terms from "./terms.js";
 
 export default (s) => {
@@ -27,9 +26,6 @@ export default (s) => {
       break;
     case "madetoorder":
       f = madetoorder;
-      break;
-    case "retailer":
-      f = retailer;
       break;
     case "terms":
       f = terms;
