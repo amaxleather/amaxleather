@@ -10,28 +10,18 @@
       "type": 2,
       "title": "Collection",
       "headers": {
-        "sofa": {
-          "title": "sofa",
+        "new-arrivals": {
+          "title": "new arrivals",
           "data": [
             {
               "image": "images/collection/west-bury.jpeg",
               "title": "westbury (MTO)",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
-            },
-            {
-              "image": "images/collection/west-bury.jpeg",
-              "title": "west-bury",
-              "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
-            },
-            {
-              "image": "images/collection/west-bury.jpeg",
-              "title": "west-bury",
-              "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
           ]
         },
-        "recliner": {
-          "title": "recliner",
+        "sofa": {
+          "title": "sofa",
           "data": [
             {
               "image": "images/collection/west-bury.jpeg",
@@ -50,8 +40,8 @@
             }
           ]
         },
-        "new-arrivals": {
-          "title": "new arrivals",
+        "motion": {
+          "title": "motion",
           "data": [
             {
               "image": "images/collection/west-bury.jpeg",
@@ -76,13 +66,9 @@
       "type": 1,
       "title": "Resources",
       "headers": {
-        "leather-care": {
-          "title": "leather care",
+        "leather-furniture-care": {
+          "title": "leather furniture care",
           "content": "leathercare"
-        },
-        "furniture-care": {
-          "title": "furniture care",
-          "content": "furniturecare"
         },
         "cleaning": {
           "title": "cleaning",
