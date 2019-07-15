@@ -47,6 +47,11 @@
               "image": "images/collection/astoria.jpeg",
               "title": "astoria",
               "dimensions": "35.5\u201dl x 37\u201dw x 43\u201dh"
+            },
+            {
+              "image": "images/collection/bedford-resize.jpeg",
+              "title": "bedford",
+              "dimensions": "35.5\u201dl x 37\u201dw x 43\u201dh"
             }
           ]
         }
