@@ -14,7 +14,7 @@
           "title": "new arrivals",
           "data": [
             {
-              "image": "images/collection/dani.JPG",
+              "image": "images/collections/dani.JPG",
               "title": "dani",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
@@ -24,7 +24,7 @@
           "title": "sofa",
           "data": [
             {
-              "image": "images/collection/new_haven_ice.JPG",
+              "image": "images/collections/new_haven_ice.JPG",
               "title": "new haven",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
@@ -34,7 +34,7 @@
           "title": "sectional",
           "data": [
             {
-              "image": "images/collection/madison_sect.jpeg",
+              "image": "images/collections/madison_sect.jpeg",
               "title": "madison sectional",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
@@ -44,12 +44,12 @@
           "title": "motion",
           "data": [
             {
-              "image": "images/collection/astoria.jpeg",
+              "image": "images/collections/astoria.jpeg",
               "title": "astoria",
               "dimensions": "35.5\u201dl x 37\u201dw x 43\u201dh"
             },
             {
-              "image": "images/collection/bedford.jpeg",
+              "image": "images/collections/bedford.jpeg",
               "title": "bedford",
               "dimensions": "35.5\u201dl x 37\u201dw x 43\u201dh"
             }
