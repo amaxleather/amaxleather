@@ -1,5 +1,5 @@
 import React from "react";
-import image from '../images/home-image.jpg';
+import image from '../images/homeimage.jpg';
 
 class Home extends React.Component {
   componentDidMount() {
