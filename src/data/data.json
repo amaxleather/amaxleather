@@ -3,7 +3,7 @@
     "about": {
       "type": 0,
       "title": "About",
-      "slider": ["images/collection/hilton.jpeg", "images/collection/madison.jpeg", "images/collection/manchester.jpeg"],
+      "slider": ["images/collections/hilton.jpeg", "images/collections/madison.jpeg", "images/collections/manchester.jpeg"],
       "content": "about"
     },
     "collection": {
