@@ -14,8 +14,8 @@
           "title": "new arrivals",
           "data": [
             {
-              "image": "images/collections/dani.JPG",
-              "title": "dani",
+              "image": "images/collections/manchester.jpeg",
+              "title": "manchester",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
           ]
@@ -24,7 +24,7 @@
           "title": "sofa",
           "data": [
             {
-              "image": "images/collections/new_haven_ice.JPG",
+              "image": "images/collections/new_haven_granite.jpeg",
               "title": "new haven",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
