@@ -14,8 +14,8 @@
           "title": "new arrivals",
           "data": [
             {
-              "image": "images/collection/west-bury.jpeg",
-              "title": "westbury (MTO)",
+              "image": "images/collection/dani.JPG",
+              "title": "dani",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
           ]
@@ -24,8 +24,8 @@
           "title": "sofa",
           "data": [
             {
-              "image": "images/collection/west-bury.jpeg",
-              "title": "west-bury",
+              "image": "images/collection/new_haven_ice.JPG",
+              "title": "new haven",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
           ]
@@ -34,7 +34,7 @@
           "title": "sectional",
           "data": [
             {
-              "image": "images/collection/madison-sectional.jpeg",
+              "image": "images/collection/madison_sect.jpeg",
               "title": "madison sectional",
               "dimensions": "86\u201dl x 35\u201dw x 30.5\u201dh"
             }
@@ -49,7 +49,7 @@
               "dimensions": "35.5\u201dl x 37\u201dw x 43\u201dh"
             },
             {
-              "image": "images/collection/bedford-resize.jpg",
+              "image": "images/collection/bedford.jpeg",
               "title": "bedford",
               "dimensions": "35.5\u201dl x 37\u201dw x 43\u201dh"
             }
