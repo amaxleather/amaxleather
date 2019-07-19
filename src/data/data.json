@@ -3,7 +3,7 @@
     "about": {
       "type": 0,
       "title": "About",
-      "slider": ["images/collections/dani.JPG", "images/collections/new_haven_ice.JPG", "images/collections/ashland.JPG", "images/collections/new_london_taupe.jpeg"],
+      "slider": ["images/collections/dani.JPG", "images/collections/new_haven_ice.JPG", "images/collections/ashland.JPG", "images/collections/new_london_taupe.jpeg", "images/collections/miami.jpg", "images/collections/como.JPG"],
       "content": "about"
     },
     "collection": {
@@ -53,6 +53,11 @@
         "sofa": {
           "title": "sofa",
           "data": [
+            {
+              "image": "images/collections/miami.jpg",
+              "title": "miami",
+              "dimensions": "87\u201dl x 38\u201dw x 36\u201dh"
+            },
             {
               "image": "images/collections/new_haven_ice.JPG",
               "title": "new haven",
