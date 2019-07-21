@@ -44,14 +44,6 @@ class Topbar extends React.Component {
         >
           <div />
         </a>
-        <a
-          className="linkedin"
-          href="https://www.linkedin.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div />
-        </a>
       </div>
     );
   }

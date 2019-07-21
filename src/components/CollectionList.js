@@ -2,7 +2,6 @@ import React from "react";
 import uuid from "uuidv4";
 
 class CollectionList extends React.Component {
-
   render() {
     return (
       <div className="collectionList">

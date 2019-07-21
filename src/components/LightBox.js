@@ -3,7 +3,6 @@ import { TweenMax } from "gsap";
 
 class Lightbox extends React.Component {
   componentDidMount() {
-    // console.log('mounting')
     TweenMax.fromTo("#lightbox", 0.1, { opacity: 0 }, { opacity: 1 });
     TweenMax.fromTo(
       "#lightbox img",
@@ -19,11 +18,9 @@ class Lightbox extends React.Component {
           <div className="img">
             <img
               className="lightimg"
-              // style={{opacity:0}}
               src={this.props.image}
               alt="Lightbox"
             />
-            {/* <p>*click anywhere to close</p> */}
           </div>
         </div>
       </div>

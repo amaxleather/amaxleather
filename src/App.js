@@ -21,21 +21,19 @@ import "./css/mobile.css";
 
 class App extends Component {
   state = {
-    data: [],
+    data: require("./data/data.json"),
     contactOpen: false,
     retailersOpen: false,
     isIE: false,
-    lightBoxClicked: false,
     lightbox: false,
     lightboximg: null
   };
   componentWillMount = () => {
-    const data = require("./data/data.json");
     this.setState({
-      data: data,
       isIE: this.checkBrowser()
     });
     this.previousPath = this.props.location.pathname;
+    this.position = 0;
   };
   openContact = () => {
     if (this.state.contactOpen === false) {
@@ -67,11 +65,7 @@ class App extends Component {
   checkBrowser = () => {
     return /*@cc_on!@ || */ !!document.documentMode;
   };
-  toggleLightBox = () => {
-    this.setState({ lightBoxClicked: !this.state.lightBoxClicked });
-  };
   showLightbox = () => {
-    this.toggleLightBox();
     if (!this.state.lightbox) {
       this.setState({
         lightbox: true
@@ -83,8 +77,12 @@ class App extends Component {
     }
   };
   changeLightBox = imagesrc => {
-    this.toggleLightBox();
     this.setState({ lightbox: true, lightboximg: imagesrc });
+    const container = document.querySelector('.collection');
+    if (container) {
+      console.log('setting position to ', container.scrollTop);
+      this.position = container.scrollTop;
+    }
   };
 
   render() {
@@ -107,6 +105,7 @@ class App extends Component {
               data={data}
               {...props}
               changeLightBox={this.changeLightBox}
+              position={this.position}
             />);
           }
         }}

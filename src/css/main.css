@@ -207,12 +207,6 @@ a.tertiaryButton.selectedlink:hover {
   background-position: center;
 }
 
-.topbar a.linkedin {
-  background-image: url(../images/li-logo.png);
-  background-size: cover;
-  background-position: center;
-}
-
 a.selectedlink {
   color: #78191a;
 }
