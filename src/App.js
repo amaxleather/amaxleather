@@ -21,7 +21,6 @@ import "./css/mobile.css";
 
 class App extends Component {
   state = {
-    data: require("./data/data.json"),
     contactOpen: false,
     retailersOpen: false,
     isIE: false,
@@ -32,8 +31,33 @@ class App extends Component {
     this.setState({
       isIE: this.checkBrowser()
     });
+    this.data = require("./data/data.json");
     this.previousPath = this.props.location.pathname;
     this.position = 0;
+    this.routes = Object.keys(this.data.headers).map(key =>
+      <Route
+        key={uuid()}
+        path={"/" + key}
+        render={(props) => {
+          const data = this.data.headers[key];
+          if (data.type === 0) {
+            return (<ContentScreen
+              data={data}
+            />);
+          } else if (data.type === 1) {
+            return (<HeadersScreen
+              data={data}
+            />);
+          } else {
+            return (<CollectionScreen
+              data={data}
+              {...props}
+              changeLightBox={this.changeLightBox}
+              position={this.position}
+            />);
+          }
+        }}
+      />);
   };
   openContact = () => {
     if (this.state.contactOpen === false) {
@@ -78,38 +102,9 @@ class App extends Component {
   };
   changeLightBox = imagesrc => {
     this.setState({ lightbox: true, lightboximg: imagesrc });
-    const container = document.querySelector('.collection');
-    if (container) {
-      console.log('setting position to ', container.scrollTop);
-      this.position = container.scrollTop;
-    }
   };
 
   render() {
-    const routes = Object.keys(this.state.data.headers).map(key =>
-      <Route
-        key={uuid()}
-        path={"/" + key}
-        render={(props) => {
-          const data = this.state.data.headers[key];
-          if (data.type === 0) {
-            return (<ContentScreen
-              data={data}
-            />);
-          } else if (data.type === 1) {
-            return (<HeadersScreen
-              data={data}
-            />);
-          } else {
-            return (<CollectionScreen
-              data={data}
-              {...props}
-              changeLightBox={this.changeLightBox}
-              position={this.position}
-            />);
-          }
-        }}
-      />);
     return (
       <div className="App">
         {this.state.isIE ? (
@@ -149,7 +144,7 @@ class App extends Component {
                   onClick={this.showLightbox}
                 />
               )}
-              <Navbar data={this.state.data.headers} onHome={this.checkOnHome()} />
+              <Navbar data={this.data.headers} onHome={this.checkOnHome()} />
               <TransitionGroup appear={true}>
                 <CSSTransition
                   key={this.props.location.key}
@@ -166,7 +161,7 @@ class App extends Component {
                   }
                 >
                   <Switch location={this.props.location}>
-                    {routes}
+                    {this.routes}
                     <Route
                       path="*"
                       render={() => (
@@ -179,14 +174,12 @@ class App extends Component {
               <Contact
                 open={this.state.contactOpen ? this.state.contactOpen : false}
                 contact={this.openContact}
-                data={this.state.data.contact}
+                data={this.data.contact}
               />
               <Retailers
-                open={
-                  this.state.retailersOpen ? this.state.retailersOpen : false
-                }
+                open={this.state.retailersOpen ? this.state.retailersOpen : false}
                 retailers={this.openRetailers}
-                data={this.state.data.retailers}
+                data={this.data.retailers}
               />
             </div>
             <Bottombar
