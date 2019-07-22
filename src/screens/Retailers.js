@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import uuid from "uuidv4";
 
 class Retailers extends React.Component {
   state = {
@@ -72,7 +73,7 @@ class Retailers extends React.Component {
     return data
       .filter(obj =>obj.state === this.state.state)
       .map(obj => (
-        <li key={obj.id}>
+        <li key={uuid()}>
           <p>
             <b>{obj.title}</b> - {obj.address}
             {" | "}

@@ -96,3 +96,22 @@
   opacity: 1;
   background-color: #78191a;
 }
+
+.resources {
+   width: 50%;
+   position: absolute;
+   height: 100%;
+   padding-right: 10%;
+   left: 40%;
+   overflow-y: scroll;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+ }
+
+#resources .content {
+  position: absolute;
+  left: 0;
+  top: 170px;
+  width: 83%;
+}

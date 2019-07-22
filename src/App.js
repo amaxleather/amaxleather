@@ -15,9 +15,10 @@ import HeadersScreen from "./screens/HeadersScreen";
 import CollectionScreen from "./screens/CollectionScreen";
 import "./css/main.css";
 import "./css/collection.css";
-import "./css/content.css";
 import "./css/contentscreen.css";
 import "./css/mobile.css";
+
+const fixTitle = str => str.toLowerCase().replace(/ /g, "-");
 
 class App extends Component {
   state = {
@@ -27,7 +28,7 @@ class App extends Component {
     lightbox: false,
     lightboximg: null
   };
-  componentWillMount = () => {
+  componentWillMount() {
     this.setState({
       isIE: this.checkBrowser()
     });
@@ -37,7 +38,7 @@ class App extends Component {
     this.routes = Object.keys(this.data.headers).map(key =>
       <Route
         key={uuid()}
-        path={"/" + key}
+        path={fixTitle("/" + key)}
         render={(props) => {
           const data = this.data.headers[key];
           if (data.type === 0) {
@@ -58,7 +59,7 @@ class App extends Component {
           }
         }}
       />);
-  };
+  }
   openContact = () => {
     if (this.state.contactOpen === false) {
       this.setState({
@@ -145,10 +146,10 @@ class App extends Component {
                 />
               )}
               <Navbar data={this.data.headers} onHome={this.checkOnHome()} />
-              <TransitionGroup appear={true}>
+              <TransitionGroup>
                 <CSSTransition
                   key={this.props.location.key}
-                  timeout={500}
+                  timeout={300}
                   classNames="fade"
                   onEnter={node => {
                     utils.introPageAnimation(node, this.previousPath, this.props.location.pathname);

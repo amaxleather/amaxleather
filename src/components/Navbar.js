@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import uuid from "uuidv4";
 
+const fixTitle = str => str.toLowerCase().replace(/ /g, "-");
+
 class Navbar extends React.Component {
   handleClick(e, to) {
     if (this.props.location.pathname === to) {
@@ -11,7 +13,7 @@ class Navbar extends React.Component {
 
   render() {
     const links = Object.keys(this.props.data).map(key => {
-        const to = "/" + key + ("headers" in this.props.data[key] ? "/" + Object.keys(this.props.data[key].headers)[0] : "");
+        const to = fixTitle("/" + key + ("headers" in this.props.data[key] ? "/" + Object.keys(this.props.data[key].headers)[0] : ""));
         return <div key={uuid()} className="navitem">
           <NavLink
             to={to}

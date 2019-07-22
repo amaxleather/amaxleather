@@ -201,8 +201,7 @@
   }
   .about,
   .collection,
-  .resources,
-  .craftsmanship {
+  .resources {
     width: 90%;
     left: 0;
     margin-left: 5%;
@@ -261,7 +260,6 @@
     display: none;
   }
 }
-
 
 @media screen and (max-width: 1055.5px) {
   .main-container {

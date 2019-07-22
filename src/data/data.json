@@ -10,7 +10,7 @@
       "type": 2,
       "title": "Collection",
       "headers": {
-        "new-arrivals": {
+        "new arrivals": {
           "title": "new arrivals",
           "data": [
             {
@@ -241,7 +241,7 @@
       "type": 1,
       "title": "Resources",
       "headers": {
-        "leather-furniture care": {
+        "leather furniture care": {
           "title": "leather furniture care",
           "content": "leathercare"
         },
@@ -249,7 +249,7 @@
           "title": "cleaning",
           "content": "cleaning"
         },
-        "terms-and-conditions": {
+        "terms and conditions": {
           "title": "terms & conditions",
           "content": "terms"
         }
