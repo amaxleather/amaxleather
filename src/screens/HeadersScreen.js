@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route, Switch, withRouter } from "react-router-dom";
+import { NavLink, Route, Switch } from "react-router-dom";
 import SubScreen from "../components/SubScreen";
 import uuid from "uuidv4";
 
