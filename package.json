@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "emailjs-com": "^2.2.4",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "react": "^16.5.2",
